@@ -27,8 +27,8 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
       
-    - name: Build debug APK
-      run: ./gradlew assembleDebug
+    - name: Run lint, unit tests, and build
+      run: ./gradlew lint test assembleDebug
       
     - name: Get branch name and short SHA
       id: vars

@@ -1,11 +1,15 @@
 package dev.capyide.mobile.ui.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
+import dev.capyide.mobile.CapyApp
 import dev.capyide.mobile.ui.editor.EditorScreen
 import dev.capyide.mobile.ui.settings.SettingsScreen
+import dev.capyide.mobile.ui.settings.SettingsViewModel
 
 sealed class Screen(val route: String) {
     data object Editor : Screen("editor")
@@ -24,8 +28,13 @@ fun CapyNavHost(navController: NavHostController) {
             )
         }
         composable(Screen.Settings.route) {
+            val app = LocalContext.current.applicationContext as CapyApp
+            val viewModel: SettingsViewModel = viewModel(
+                factory = SettingsViewModel.provideFactory(app)
+            )
             SettingsScreen(
-                onBackClick = { navController.popBackStack() }
+                onBackClick = { navController.popBackStack() },
+                viewModel = viewModel
             )
         }
     }

@@ -4,20 +4,21 @@ AI-assisted mobile IDE for Android built with Kotlin + Jetpack Compose.
 
 ## Features
 
-- **AI Code Assistance** - Integration with multiple AI providers (OpenRouter, Groq, Azure, Anthropic)
-- **Code Editor** - Syntax-highlighted editor with future AI suggestions
-- **Settings Management** - API key configuration and provider selection
-- **Update System** - Automatic update checking via WorkManager
-- **Material 3 Design** - Modern Compose UI with dynamic theming
+- **AI Code Assistance** - Multi-provider framework (OpenRouter, Groq, Azure, Anthropic)
+- **Code Editor** - Compose-based scaffold ready for syntax highlighting + AI suggestions
+- **Secure Settings** - Encrypted API key storage with provider selection + auto-update toggle
+- **Update System** - WorkManager job checks GitHub releases and surfaces notifications
+- **Material You UI** - Dynamic color palette, edge-to-edge layout, and responsive components
 
 ## Architecture
 
-Clean Architecture with:
+Clean architecture with core/domain isolation:
 ```
 dev.capyide.mobile/
-├── core/           # Domain logic (AI, config, updates)
-├── ui/             # Compose screens and navigation
-└── MainActivity    # Entry point with NavHost
+|- core/        # Domain logic (AI, config, updates)
+|- ui/          # Compose screens + navigation
+|- CapyApp.kt   # Application container + WorkManager wiring
+`- MainActivity # Entry point hosting NavHost
 ```
 
 ## Setup & Build
@@ -29,39 +30,35 @@ dev.capyide.mobile/
 
 ### Build Instructions
 ```bash
-cd CapyIDE Mobile
 ./gradlew clean assembleDebug
 ```
 
-**Note:** Ensure Java is properly installed and in PATH for Gradle wrapper.
-
-### Run
+### Install On Device
 ```bash
 ./gradlew installDebug
 ```
 
 ## Project Status
-- ✅ Core architecture complete
-- ✅ Navigation between Editor ↔ Settings
-- ✅ Theme system implemented
-- ✅ AI provider framework ready
-- 🔄 Settings persistence stubbed (DataStore planned)
-- 📱 Ready for APK generation
-- ✅ GitHub repo: https://github.com/StressTestor/CapyIDE-Mobile (commit 58f4451)
+- [x] Core architecture & Compose navigation
+- [x] Material 3 theme + dynamic color
+- [x] Secure settings persistence with encrypted storage
+- [x] GitHub-powered update checks via WorkManager
+- [ ] Real code editor (syntax/AI suggestions) in progress
+- [ ] AI provider networking + response rendering next milestone
 
 ## CI/CD
-GitHub Actions workflow in `.github/workflows/android-build.yml` builds debug APKs on push.
+GitHub Actions workflow (`.github/workflows/android-build.yml`) now runs `lint`, `test`, and `assembleDebug` on pushes to `main` or `dev`, publishing signed debug APK artifacts.
 
 ## Next Development
 1. Real code editor (syntax highlighting, autocomplete)
-2. AI integration with actual API calls
-3. Secure settings persistence (EncryptedSharedPreferences)
-4. File system integration
-5. Project management (file tree, tabs)
+2. AI integration with live provider calls + streaming responses
+3. File system integration + project tree/tabs
+4. Offline project caching + Git operations
+5. Enhanced QA: screenshot tests, performance benchmarks
 
 ## Screenshots
 
-![CapyIDE Mobile Editor](screenshots/editor.png)
+![CapyIDE Mobile Editor](screenshots/editor.png)  
 ![CapyIDE Mobile Settings](screenshots/settings.png)
 
 ## License
