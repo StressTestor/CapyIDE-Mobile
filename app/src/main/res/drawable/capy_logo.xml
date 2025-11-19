@@ -3,14 +3,70 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-  <!-- Placeholder for CAPY logo PNG -->
-  <!-- Place actual capybara PNG here: app/src/main/res/drawable/capy_logo.png -->
-  
-  <!-- Simple purple circle with white C for CAPY -->
-  <path
-      android:fillColor="#585F9B"
-      android:pathData="M 54,54 m -48,0 a 48,48 0 1,0 96,0 a 48,48 0 1,0 -96,0"/>
-  <path
-      android:fillColor="#FFFFFF"
-      android:pathData="M 40,45 L 68,45 L 68,63 L 54,63 L 54,80 L 40,80 Z"/>
+    <path
+        android:fillColor="#5B5EBB"
+        android:pathData="M0,0h108v108h-108z" />
+    <path
+        android:fillColor="#1D1A2B"
+        android:pathData="M20,78C20,58 38,48 54,48C70,48 88,58 88,78V108H20Z" />
+    <path
+        android:fillColor="#262235"
+        android:pathData="M30,66C32,52 44,44 54,44C64,44 76,52 78,66L78,98H30Z" />
+    <path
+        android:fillColor="#191622"
+        android:pathData="M30,60C30,42 42,32 54,32C66,32 78,42 78,60L78,78H30Z" />
+    <path
+        android:fillColor="#D99160"
+        android:pathData="M26,32C26,18 82,18 82,40C82,60 70,78 54,78C38,78 26,64 26,32Z" />
+    <path
+        android:fillColor="#BF7549"
+        android:pathData="M36,46C36,36 72,36 72,48C72,60 64,68 54,68C44,68 36,60 36,46Z" />
+    <path
+        android:fillColor="#0E0D12"
+        android:pathData="M28,40H46C52,40 56,44 56,50V56H28Z" />
+    <path
+        android:fillColor="#0E0D12"
+        android:pathData="M62,40H80C86,40 90,44 90,50V56H62Z" />
+    <path
+        android:fillColor="#1F1B2B"
+        android:pathData="M40,60C40,58 42,56 44,56C46,56 48,58 48,60L48,66H40Z" />
+    <path
+        android:fillColor="#1F1B2B"
+        android:pathData="M60,60C60,58 62,56 64,56C66,56 68,58 68,60L68,66H60Z" />
+    <path
+        android:fillColor="#0E0D12"
+        android:pathData="M44,58C44,56.895 45.343,56 47,56C48.657,56 50,56.895 50,58C50,59.105 48.657,60 47,60C45.343,60 44,59.105 44,58Z" />
+    <path
+        android:fillColor="#0E0D12"
+        android:pathData="M64,58C64,56.895 65.343,56 67,56C68.657,56 70,56.895 70,58C70,59.105 68.657,60 67,60C65.343,60 64,59.105 64,58Z" />
+    <path
+        android:fillColor="#C67F4F"
+        android:pathData="M40,66C40,64 44,62 48,62C52,62 56,64 56,66C56,68 52,70 48,70C44,70 40,68 40,66Z" />
+    <path
+        android:fillColor="#C67F4F"
+        android:pathData="M52,72C52,70 56,68 60,68C64,68 68,70 68,72C68,74 64,76 60,76C56,76 52,74 52,72Z" />
+    <path
+        android:fillColor="#0E0D12"
+        android:pathData="M52,70C52,69.448 52.896,69 54,69C55.104,69 56,69.448 56,70C56,70.552 55.104,71 54,71C52.896,71 52,70.552 52,70Z" />
+    <path
+        android:fillColor="#1D1A2B"
+        android:pathData="M36,28C38,22 46,18 54,18C62,18 70,22 72,28L64,32C62,28 58,26 54,26C50,26 46,28 44,32Z" />
+    <path
+        android:fillColor="#C67F4F"
+        android:pathData="M28,30C28,26 32,22 36,22C38,22 40,24 40,26C40,30 36,34 32,34C30,34 28,32 28,30Z" />
+    <path
+        android:fillColor="#C67F4F"
+        android:pathData="M72,26C72,22 76,20 78,20C82,20 84,24 84,28C84,30 82,32 80,32C76,32 72,30 72,26Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M12,86H30V94H20V104H30V112H12Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M36,112L44,86H56L64,112H56L54,106H46L44,112ZM48,100H52L50,92Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M66,86H80C86,86 90,90 90,98C90,106 86,110 80,110H76V112H66ZM74,94V102H80C82,102 84,100 84,98C84,96 82,94 80,94Z" />
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M90,86H96L100,94L104,86H108L102,98V112H94V98Z" />
 </vector>
