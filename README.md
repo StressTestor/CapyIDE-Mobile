@@ -47,6 +47,7 @@ cd CapyIDE Mobile
 - ✅ AI provider framework ready
 - 🔄 Settings persistence stubbed (DataStore planned)
 - 📱 Ready for APK generation
+- ✅ GitHub repo: https://github.com/StressTestor/CapyIDE-Mobile (commit 58f4451)
 
 ## CI/CD
 GitHub Actions workflow in `.github/workflows/android-build.yml` builds debug APKs on push.
@@ -57,6 +58,11 @@ GitHub Actions workflow in `.github/workflows/android-build.yml` builds debug AP
 3. Secure settings persistence (EncryptedSharedPreferences)
 4. File system integration
 5. Project management (file tree, tabs)
+
+## Screenshots
+
+![CapyIDE Mobile Editor](screenshots/editor.png)
+![CapyIDE Mobile Settings](screenshots/settings.png)
 
 ## License
 MIT License
