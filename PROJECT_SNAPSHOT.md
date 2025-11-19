@@ -86,3 +86,7 @@ dev.capyide.mobile/
 **Last Updated:** November 17, 2025  
 **Snapshot Generated:** RECOVERY COMPLETE MODE  
 **Status:** Ready for feature development
+
+**GitHub Repo:** https://github.com/StressTestor/CapyIDE-Mobile
+
+**Latest Commit:** 58f4451 (Initial commit with CAPY branding, Material 3 theme, 32 files)
