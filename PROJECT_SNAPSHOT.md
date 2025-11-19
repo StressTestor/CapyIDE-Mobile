@@ -1,92 +1,48 @@
-# CapyIDE Mobile (Capy Pocket) - Project Snapshot & Recovery Complete
+# CapyIDE Mobile (Capy Pocket) - Snapshot
 
 ## Project Overview
 
-**Project Name:** CapyIDE Mobile (Capy Pocket)  
-**Description:** AI-assisted mobile IDE scaffold with Kotlin+Jetpack Compose  
-**Current Status:** ✅ 100% recovered - Build & install successful on emulated device
+**Description:** AI-assisted mobile IDE scaffold built with Kotlin + Jetpack Compose  
+**Current Status:** Build, lint, and unit tests green on Kotlin 2.0 / Compose compiler (Nov 2025).  
+**Primary Branch:** `main`
 
-## Architecture & Structure
+## Architecture & Stack
 
-### Technology Stack
-- **Language:** Kotlin 1.9.24
-- **Android API:** MinSdk 26, TargetSdk 35
-- **UI Framework:** Jetpack Compose with Material 3
-- **Build System:** Gradle Kotlin DSL
-- **Architecture:** Clean architecture with domain/core/data layers
+- **Language:** Kotlin 2.0.20 / JVM 17
+- **Android API:** MinSdk 26, Target/Compile 35
+- **UI:** Jetpack Compose + Material 3
+- **Build:** Gradle Kotlin DSL, Compose BOM 2024.06, Compose compiler plugin
+- **Structure:**
+  ```
+  dev.capyide.mobile/
+  |- core/    # AI, config, update modules
+  |- ui/      # Editor, Settings, Navigation, Theme
+  |- CapyApp  # Application + DI container
+  `- MainActivity
+  ```
 
-### Package Structure
-```
-dev.capyide.mobile/
-├── core/
-│   ├── ai/           # AI provider integration
-│   ├── config/       # Settings & preferences
-│   └── update/       # Update checking system
-├── ui/
-│   ├── editor/       # Code editor screen
-│   ├── navigation/   # Navigation host & routes
-│   ├── settings/     # Settings screen
-│   └── theme/        # Compose theme components
-└── MainActivity.kt   # App entry point
-```
+## Recent Improvements (Nov 2025)
 
-## Recovery Status - ALL ISSUES RESOLVED
+1. Secure settings repository backed by EncryptedSharedPreferences with Flow exposure.
+2. ViewModel-driven Settings screen: auto-update toggle, manual update checks, persisted API keys.
+3. WorkManager scheduler paired with GitHub release integration + user notifications (with runtime notification permission gating).
+4. Build alignment: Kotlin 2.0.20, Compose compiler plugin 1.6.20, JVM 21, deterministic versioning, local JDK bootstrap in `gradlew`.
+5. Permissions/privacy tightened with INTERNET/ACCESS_NETWORK_STATE/POST_NOTIFICATIONS + backup exclusions.
+6. Docs/CI refresh: README rewrite, snapshot update, workflow runs `lint`, `test`, `assembleDebug`.
 
-### ✅ All Components Now Complete
-- **SettingsRepository.kt:** Fully repaired with imports, complete stub implementation
-- **Build Process:** `./gradlew clean assembleDebug` successful
-- **Installation:** APK installed and running on emulated device via Android Studio
-- **Navigation:** Editor ↔ Settings fully functional
-- **Documentation:** README.md added with setup/build instructions
-- **Icons:** Custom launcher icon implemented
+## Outstanding Work
 
-### File-by-File Status (Updated)
+- Rich code editor (syntax highlighting, autocomplete, multi-file tabs)
+- Real AI provider integrations routed through Retrofit/OkHttp
+- File/project storage + import/export
+- Offline support, Git integration, and workspace management
+- Automated UI tests + screenshot baselines
 
-| File | Status | Issues | Recovery Needed |
-|------|--------|--------|-----------------|
-| `settings.gradle.kts` | ✅ Complete | None | None |
-| `build.gradle.kts` | ✅ Complete | None | None |
-| `app/build.gradle.kts` | ✅ Complete | None | None |
-| `AndroidManifest.xml` | ✅ Complete | None | None |
-| `MainActivity.kt` | ✅ Complete | None | None |
-| `ui/theme/*.kt` | ✅ Complete | None | None |
-| `ui/navigation/Navigation.kt` | ✅ Complete | None | None |
-| `ui/editor/EditorScreen.kt` | ✅ Complete | None | None |
-| `ui/settings/SettingsScreen.kt` | ✅ Complete | None | None |
-| `core/ai/AiProviderType.kt` | ✅ Complete | None | None |
-| `core/ai/ModelProfile.kt` | ✅ Complete | None | None |
-| `core/ai/AiProviderRegistry.kt` | ✅ Complete | None | None |
-| `core/config/AppSettings.kt` | ✅ Complete | None | None |
-| `core/config/SettingsRepository.kt` | ✅ Complete | Fixed: imports & implementation | None |
-| `core/update/UpdateInfo.kt` | ✅ Complete | None | None |
-| `core/update/UpdateChecker.kt` | ✅ Complete | None | None |
-| `core/update/CheckUpdateWorker.kt` | ✅ Complete | None | None |
-| `strings.xml` | ✅ Complete | None | None |
-| `gradle.properties` | ✅ Complete | None | None |
-| `.github/workflows/android-build.yml` | ✅ Complete | None | None |
+## Validation Checklist
 
-## Next Development Phase
+- `./gradlew lint test assembleDebug`
+- WorkManager enqueues background update worker
+- Settings survive process death & rotation
+- Update notifications trigger when GitHub releases expose newer APKs
 
-1. **Real Code Editor:** Syntax highlighting, autocomplete, file tree
-2. **AI Integration:** Live API calls via AiProviderRegistry
-3. **Secure Persistence:** DataStore/EncryptedSharedPreferences for settings
-4. **Project Management:** Multi-file tabs, workspace support
-5. **Advanced Features:** Git integration, terminal, debugger
-
-## Validation Results
-- ✅ Gradle sync successful in Android Studio
-- ✅ `./gradlew clean assembleDebug` → APK generated
-- ✅ APK installed on emulated device
-- ✅ App launches with Editor screen
-- ✅ Navigation to Settings works
-- ✅ Settings UI renders (API key field, provider dropdown)
-
----
-
-**Last Updated:** November 17, 2025  
-**Snapshot Generated:** RECOVERY COMPLETE MODE  
-**Status:** Ready for feature development
-
-**GitHub Repo:** https://github.com/StressTestor/CapyIDE-Mobile
-
-**Latest Commit:** 58f4451 (Initial commit with CAPY branding, Material 3 theme, 32 files)
+_Last updated: November 19, 2025_

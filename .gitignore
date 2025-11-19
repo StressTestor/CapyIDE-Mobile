@@ -39,3 +39,7 @@ proguard/
 # Logs
 *.log
 *.hprof
+
+# Local JDK downloads
+jdk/
+jdk*.zip
