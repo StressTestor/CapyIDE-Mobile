@@ -6,28 +6,24 @@ package dev.capyide.mobile.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-// CAPY Brand Colors - Extracted from logo (purple bg, capy in hoodie, white text)
-val CapyPurple = Color(0xFF585F9B)   // main brand purple (background)
-val CapyDark = Color(0xFF282829)     // hoodie / outline dark neutral
-val CapyFur = Color(0xFFCB8A59)      // primary fur tone
-val CapyFurDeep = Color(0xFFAD6A3D)  // darker fur / shading
-val CapyWhite = Color(0xFFFFFFFF)    // text / highlights
+// CAPY Brand Palette derived from hoodie mascot illustration
+val CapyIndigo = Color(0xFF5B5EBB)
+val CapyIndigoDark = Color(0xFF3F448C)
+val CapyMidnight = Color(0xFF1D1A2B)
+val CapyCharcoal = Color(0xFF0E0D12)
+val CapyFur = Color(0xFFD99160)
+val CapyFurDeep = Color(0xFFB86F43)
+val CapyCream = Color(0xFFF5F1EA)
 
 // Material 3 Light Theme Colors
-val CapyPrimary = CapyPurple
-val CapyOnPrimary = CapyWhite
+val CapyPrimary = CapyIndigo
+val CapyOnPrimary = Color.White
 val CapySecondary = CapyFur
-val CapyOnSecondary = CapyDark
-val CapyBackground = CapyPurple
-val CapyOnBackground = CapyWhite
-val CapySurface = CapyDark
-val CapyOnSurface = CapyWhite
+val CapyOnSecondary = CapyMidnight
 val CapyTertiary = CapyFurDeep
-
-// Legacy colors (for compatibility during transition)
-val Purple80 = CapyPrimary
-val PurpleGrey80 = CapySecondary
-val Pink80 = CapyTertiary
-val Purple40 = CapyPrimary
-val PurpleGrey40 = CapySecondary
-val Pink40 = CapyTertiary
+val CapyBackground = CapyCream
+val CapyOnBackground = CapyMidnight
+val CapySurface = Color.White
+val CapyOnSurface = CapyMidnight
+val CapySurfaceVariant = CapyIndigo.copy(alpha = 0.08f)
+val CapyOutline = CapyIndigoDark
