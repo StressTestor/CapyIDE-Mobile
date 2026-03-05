@@ -1,0 +1,69 @@
+{
+  "identifier" : "dev.capyide.mobile.storekit",
+  "nonRenewingSubscriptions" : [],
+  "products" : [],
+  "settings" : {
+    "_applicationInternalID" : "",
+    "_developerTeamID" : "8QP24RDLUR",
+    "_failTransactionsEnabled" : false,
+    "_lastSynchronizedDate" : "",
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitErrors" : []
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "dev.capyide.mobile.pro",
+      "localizations" : [],
+      "name" : "CapyIDE Pro",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "3.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "monthly_001",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Remove ads from CapyIDE Mobile. Billed monthly.",
+              "displayName" : "CapyIDE Pro Monthly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "dev.capyide.mobile.pro.monthly",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Pro Monthly",
+          "subscriptionGroupID" : "dev.capyide.mobile.pro",
+          "type" : "RecurringSubscription"
+        },
+        {
+          "adHocOffers" : [],
+          "codeOffers" : [],
+          "displayPrice" : "19.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "yearly_001",
+          "introductoryOffer" : null,
+          "localizations" : [
+            {
+              "description" : "Remove ads from CapyIDE Mobile. Billed yearly. Save ~58%.",
+              "displayName" : "CapyIDE Pro Yearly",
+              "locale" : "en_US"
+            }
+          ],
+          "productID" : "dev.capyide.mobile.pro.yearly",
+          "recurringSubscriptionPeriod" : "P1Y",
+          "referenceName" : "Pro Yearly",
+          "subscriptionGroupID" : "dev.capyide.mobile.pro",
+          "type" : "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; overflow: hidden; }
+  #editor { height: 100%; }
+  .cm-editor { height: 100%; font-size: 14px; }
+  .cm-scroller { overflow: auto; }
+  .cm-content { font-family: 'SF Mono', 'Menlo', 'Courier New', monospace; }
+</style>
+</head>
+<body>
+<div id="editor"></div>
+
+<script type="module">
+import {EditorView, basicSetup} from "https://esm.sh/@codemirror/basic-setup@0.20.0";
+import {EditorState} from "https://esm.sh/@codemirror/state@6.4.1";
+import {javascript} from "https://esm.sh/@codemirror/lang-javascript@6.2.2";
+import {python} from "https://esm.sh/@codemirror/lang-python@6.1.6";
+import {html as htmlLang} from "https://esm.sh/@codemirror/lang-html@6.4.9";
+import {css} from "https://esm.sh/@codemirror/lang-css@6.3.0";
+import {json as jsonLang} from "https://esm.sh/@codemirror/lang-json@6.0.1";
+import {xml} from "https://esm.sh/@codemirror/lang-xml@6.1.0";
+import {markdown} from "https://esm.sh/@codemirror/lang-markdown@6.3.0";
+import {java} from "https://esm.sh/@codemirror/lang-java@6.0.1";
+import {oneDark} from "https://esm.sh/@codemirror/theme-one-dark@6.1.2";
+import {keymap} from "https://esm.sh/@codemirror/view@6.33.1";
+import {indentWithTab} from "https://esm.sh/@codemirror/commands@6.6.2";
+
+const languages = {
+  javascript: javascript(),
+  typescript: javascript({typescript: true}),
+  jsx: javascript({jsx: true}),
+  tsx: javascript({jsx: true, typescript: true}),
+  python: python(),
+  html: htmlLang(),
+  css: css(),
+  json: jsonLang(),
+  xml: xml(),
+  markdown: markdown(),
+  java: java(),
+  kotlin: java(), // close enough syntax-wise
+  text: []
+};
+
+let currentView = null;
+let isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+function getExtensions(lang, dark) {
+  const exts = [
+    basicSetup,
+    keymap.of([indentWithTab]),
+    EditorView.updateListener.of(update => {
+      if (update.docChanged) {
+        const content = update.state.doc.toString();
+        try {
+          window.webkit.messageHandlers.contentChanged.postMessage(content);
+        } catch(e) {}
+      }
+    }),
+    EditorView.theme({
+      "&": { height: "100%" },
+      ".cm-scroller": { overflow: "auto" }
+    })
+  ];
+  if (dark) exts.push(oneDark);
+  const langExt = languages[lang];
+  if (langExt) {
+    if (Array.isArray(langExt)) {
+      exts.push(...langExt);
+    } else {
+      exts.push(langExt);
+    }
+  }
+  return exts;
+}
+
+function createEditor(content, lang) {
+  const parent = document.getElementById('editor');
+  parent.innerHTML = '';
+  const state = EditorState.create({
+    doc: content || '',
+    extensions: getExtensions(lang || 'text', isDark)
+  });
+  currentView = new EditorView({ state, parent });
+}
+
+// API for native code
+window.editorAPI = {
+  setContent: function(content) {
+    if (!currentView) return;
+    currentView.dispatch({
+      changes: { from: 0, to: currentView.state.doc.length, insert: content }
+    });
+  },
+  getContent: function() {
+    return currentView ? currentView.state.doc.toString() : '';
+  },
+  setLanguage: function(lang) {
+    const content = currentView ? currentView.state.doc.toString() : '';
+    createEditor(content, lang);
+  },
+  setTheme: function(dark) {
+    isDark = dark;
+    const content = currentView ? currentView.state.doc.toString() : '';
+    const lang = 'text'; // re-detect from native side
+    createEditor(content, lang);
+  },
+  getCursorPosition: function() {
+    if (!currentView) return JSON.stringify({line: 0, col: 0});
+    const pos = currentView.state.selection.main.head;
+    const line = currentView.state.doc.lineAt(pos);
+    return JSON.stringify({line: line.number, col: pos - line.from});
+  },
+  focus: function() {
+    if (currentView) currentView.focus();
+  }
+};
+
+// initialize with empty content
+createEditor('', 'text');
+
+// notify native that editor is ready
+try {
+  window.webkit.messageHandlers.editorReady.postMessage('ready');
+} catch(e) {}
+</script>
+</body>
+</html>
