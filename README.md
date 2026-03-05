@@ -1,65 +1,111 @@
-# CapyIDE Mobile (Capy Pocket)
+# CapyIDE Mobile
 
-AI-assisted mobile IDE for Android built with Kotlin + Jetpack Compose.
+cross-platform mobile IDE for Android and iOS. kotlin multiplatform + compose multiplatform.
 
-## Features
+write code on your phone with syntax highlighting, AI assistance from 4 providers, and a proper file tree. because the "editor" being a hardcoded `Text()` composable wasn't cutting it.
 
-- **AI Code Assistance** - Multi-provider framework (OpenRouter, Groq, Azure, Anthropic)
-- **Code Editor** - Compose-based scaffold ready for syntax highlighting + AI suggestions
-- **Secure Settings** - Encrypted API key storage with provider selection + auto-update toggle
-- **Update System** - WorkManager job checks GitHub releases and surfaces notifications
-- **Material You UI** - Dynamic color palette, edge-to-edge layout, and responsive components
+## what works
 
-## Architecture
+- **code editor** - Sora Editor on Android, CodeMirror 6 via WKWebView on iOS. 10 language syntaxes (kotlin, java, js/ts, python, html, css, json, xml, markdown).
+- **AI code assist** - OpenRouter, Groq, Azure OpenAI, Anthropic. explain, complete, refactor, or just chat about your code.
+- **file management** - project file tree drawer, create/open/save files
+- **secure settings** - EncryptedSharedPreferences on Android, Keychain on iOS. per-provider API key storage.
+- **update checker** - WorkManager job checks GitHub releases every 12h, surfaces notification with changelog
+- **cross-platform UI** - Compose Multiplatform with custom capybara-inspired color scheme
+- **monetization** - AdMob banner ads, removable via monthly ($3.99) or yearly ($19.99) subscription
 
-Clean architecture with core/domain isolation:
+## architecture
+
 ```
-dev.capyide.mobile/
-|- core/        # Domain logic (AI, config, updates)
-|- ui/          # Compose screens + navigation
-|- CapyApp.kt   # Application container + WorkManager wiring
-`- MainActivity # Entry point hosting NavHost
+CapyIDE-Mobile/
+├── shared/          # KMP module - business logic, AI providers, file system, DI
+│   ├── commonMain/  # interfaces, data classes, viewmodels, Ktor HTTP
+│   ├── androidMain/ # EncryptedSharedPrefs, java.io.File
+│   └── iosMain/     # Keychain, NSFileManager
+├── composeApp/      # Compose Multiplatform UI
+│   ├── commonMain/  # all screens, navigation, theme, AI assist panel
+│   ├── androidMain/ # Sora Editor AndroidView wrapper
+│   └── iosMain/     # CodeMirror WKWebView wrapper + iOS entry point
+├── androidApp/      # thin Android shell (CapyApp + MainActivity + WorkManager)
+└── iosApp/          # SwiftUI entry point + StoreKit 2 + AdMob
 ```
 
-## Setup & Build
+DI via Koin. HTTP via Ktor. serialization via kotlinx-serialization. no Hilt, no Retrofit, no OkHttp.
 
-### Prerequisites
-- Android Studio Koala | 2024.1.1 or later
-- JDK 17+
+## setup
+
+### prerequisites
+- Android Studio Koala 2024.1.1+ (or just Gradle CLI)
+- JDK 17
 - Android SDK API 35
+- Xcode 15+ (for iOS)
+- Apple Developer account (for device deployment + App Store)
 
-### Build Instructions
+### build
+
 ```bash
-./gradlew clean assembleDebug
+# android
+./gradlew :androidApp:assembleDebug
+
+# iOS - open in Xcode
+open iosApp/iosApp.xcodeproj
 ```
 
-### Install On Device
-```bash
-./gradlew installDebug
-```
+### iOS setup
 
-## Project Status
-- [x] Core architecture & Compose navigation
-- [x] Material 3 theme + dynamic color
-- [x] Secure settings persistence with encrypted storage
-- [x] GitHub-powered update checks via WorkManager
-- [ ] Real code editor (syntax/AI suggestions) in progress
-- [ ] AI provider networking + response rendering next milestone
+1. open `iosApp/iosApp.xcodeproj` in Xcode
+2. add Google Mobile Ads SDK via File > Add Package Dependencies
+   - URL: `https://github.com/googleads/swift-package-manager-google-mobile-ads`
+3. replace the test GADApplicationIdentifier in `Info.plist` with your real AdMob app ID
+4. select your device, hit Run (first build compiles the Kotlin framework via Gradle, takes a few minutes)
+
+### StoreKit testing
+
+the `Configuration.storekit` file is included for local subscription testing in Xcode. set it as the StoreKit Configuration in your scheme's Run settings to test purchases without App Store Connect.
+
+## AI providers
+
+| provider | base URL | auth |
+|----------|----------|------|
+| OpenRouter | openrouter.ai/api/v1 | Bearer token |
+| Groq | api.groq.com/openai/v1 | Bearer token |
+| Azure OpenAI | {resource}.openai.azure.com | api-key header |
+| Anthropic | api.anthropic.com/v1 | x-api-key + anthropic-version headers |
+
+configure API keys per-provider in settings.
+
+## monetization
+
+| tier | price | what you get |
+|------|-------|-------------|
+| free | $0 | full app with banner ads |
+| pro monthly | $3.99/mo | no ads |
+| pro yearly | $19.99/yr | no ads, ~58% savings |
+
+ads managed via AdMob iOS SDK. subscriptions via StoreKit 2 with server-side receipt verification. paywall accessible from the app, restore purchases supported.
 
 ## CI/CD
-GitHub Actions workflow (`.github/workflows/android-build.yml`) now runs `lint`, `test`, and `assembleDebug` on pushes to `main` or `dev`, publishing signed debug APK artifacts.
 
-## Next Development
-1. Real code editor (syntax highlighting, autocomplete)
-2. AI integration with live provider calls + streaming responses
-3. File system integration + project tree/tabs
-4. Offline project caching + Git operations
-5. Enhanced QA: screenshot tests, performance benchmarks
+GitHub Actions runs on push to main:
+- android: lint, test, assembleDebug, upload APK artifact
+- android-release: assembleRelease on main pushes
+- ios: build iOS framework on macos-latest
 
-## Screenshots
+## stack
 
-![CapyIDE Mobile Editor](screenshots/editor.png)  
-![CapyIDE Mobile Settings](screenshots/settings.png)
+| layer | tech |
+|-------|------|
+| language | Kotlin 2.1.0 |
+| UI | Compose Multiplatform 1.7.3 |
+| DI | Koin 4.0.2 |
+| HTTP | Ktor 3.0.3 |
+| serialization | kotlinx-serialization 1.7.3 |
+| android editor | Sora Editor 0.23.4 |
+| iOS editor | CodeMirror 6 (WKWebView) |
+| ads | Google AdMob |
+| subscriptions | StoreKit 2 |
+| build | Gradle 8.5.2 AGP |
 
-## License
-MIT License
+## license
+
+MIT

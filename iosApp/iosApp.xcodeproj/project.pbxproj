@@ -1,0 +1,340 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7A1B2C3D4E5F6A7B8C9D0E1F /* CapyIDEApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A1B2C3D4E5F6A7B8C9D0E1F /* CapyIDEApp.swift */; };
+		7A2B2C3D4E5F6A7B8C9D0E1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8A2B2C3D4E5F6A7B8C9D0E1F /* Assets.xcassets */; };
+		7A3B2C3D4E5F6A7B8C9D0E1F /* StoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A3B2C3D4E5F6A7B8C9D0E1F /* StoreManager.swift */; };
+		7A4B2C3D4E5F6A7B8C9D0E1F /* PaywallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A4B2C3D4E5F6A7B8C9D0E1F /* PaywallView.swift */; };
+		7A5B2C3D4E5F6A7B8C9D0E1F /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A5B2C3D4E5F6A7B8C9D0E1F /* BannerAdView.swift */; };
+		7A6B2C3D4E5F6A7B8C9D0E1F /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 8A6B2C3D4E5F6A7B8C9D0E1F /* PrivacyInfo.xcprivacy */; };
+		8F3B85CC2F592D300094A332 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 8F3B85CB2F592D300094A332 /* GoogleMobileAds */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8A1B2C3D4E5F6A7B8C9D0E1F /* CapyIDEApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapyIDEApp.swift; sourceTree = "<group>"; };
+		8A2B2C3D4E5F6A7B8C9D0E1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8A3B2C3D4E5F6A7B8C9D0E1F /* StoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreManager.swift; sourceTree = "<group>"; };
+		8A4B2C3D4E5F6A7B8C9D0E1F /* PaywallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaywallView.swift; sourceTree = "<group>"; };
+		8A5B2C3D4E5F6A7B8C9D0E1F /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
+		8A6B2C3D4E5F6A7B8C9D0E1F /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		8A7B2C3D4E5F6A7B8C9D0E1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8A8B2C3D4E5F6A7B8C9D0E1F /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
+		9A1B2C3D4E5F6A7B8C9D0E1F /* iosApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA1B2C3D4E5F6A7B8C9D0E1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8F3B85CC2F592D300094A332 /* GoogleMobileAds in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA1B2C3D4E5F6A7B8C9D0E1F = {
+			isa = PBXGroup;
+			children = (
+				DA2B2C3D4E5F6A7B8C9D0E1F /* iosApp */,
+				DA3B2C3D4E5F6A7B8C9D0E1F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA2B2C3D4E5F6A7B8C9D0E1F /* iosApp */ = {
+			isa = PBXGroup;
+			children = (
+				8A1B2C3D4E5F6A7B8C9D0E1F /* CapyIDEApp.swift */,
+				8A3B2C3D4E5F6A7B8C9D0E1F /* StoreManager.swift */,
+				8A4B2C3D4E5F6A7B8C9D0E1F /* PaywallView.swift */,
+				8A5B2C3D4E5F6A7B8C9D0E1F /* BannerAdView.swift */,
+				8A2B2C3D4E5F6A7B8C9D0E1F /* Assets.xcassets */,
+				8A7B2C3D4E5F6A7B8C9D0E1F /* Info.plist */,
+				8A6B2C3D4E5F6A7B8C9D0E1F /* PrivacyInfo.xcprivacy */,
+				8A8B2C3D4E5F6A7B8C9D0E1F /* Configuration.storekit */,
+			);
+			path = iosApp;
+			sourceTree = "<group>";
+		};
+		DA3B2C3D4E5F6A7B8C9D0E1F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9A1B2C3D4E5F6A7B8C9D0E1F /* iosApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA1B2C3D4E5F6A7B8C9D0E1F /* iosApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA2B2C3D4E5F6A7B8C9D0E1F /* Build configuration list for PBXNativeTarget "iosApp" */;
+			buildPhases = (
+				EA2B2C3D4E5F6A7B8C9D0E1F /* Compile Kotlin Framework */,
+				EA3B2C3D4E5F6A7B8C9D0E1F /* Sources */,
+				CA1B2C3D4E5F6A7B8C9D0E1F /* Frameworks */,
+				EA4B2C3D4E5F6A7B8C9D0E1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iosApp;
+			packageProductDependencies = (
+				8F3B85CB2F592D300094A332 /* GoogleMobileAds */,
+			);
+			productName = iosApp;
+			productReference = 9A1B2C3D4E5F6A7B8C9D0E1F /* iosApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA1B2C3D4E5F6A7B8C9D0E1F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					EA1B2C3D4E5F6A7B8C9D0E1F = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = FA1B2C3D4E5F6A7B8C9D0E2F /* Build configuration list for PBXProject "iosApp" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DA1B2C3D4E5F6A7B8C9D0E1F;
+			packageReferences = (
+				8F3B85CA2F592D300094A332 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
+			productRefGroup = DA3B2C3D4E5F6A7B8C9D0E1F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA1B2C3D4E5F6A7B8C9D0E1F /* iosApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA4B2C3D4E5F6A7B8C9D0E1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A2B2C3D4E5F6A7B8C9D0E1F /* Assets.xcassets in Resources */,
+				7A6B2C3D4E5F6A7B8C9D0E1F /* PrivacyInfo.xcprivacy in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		EA2B2C3D4E5F6A7B8C9D0E1F /* Compile Kotlin Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Compile Kotlin Framework";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export JAVA_HOME=\"/opt/homebrew/Cellar/openjdk@17/17.0.17/libexec/openjdk.jdk/Contents/Home\"\ncd \"$SRCROOT/..\"\n./gradlew :composeApp:embedAndSignAppleFrameworkForXcode\n\n# Copy Compose Multiplatform resources to app bundle\nCOMPOSE_RESOURCES=\"$SRCROOT/../composeApp/build/compose/ios/composeApp/compose-resources\"\nif [ -d \"$COMPOSE_RESOURCES\" ]; then\n  cp -R \"$COMPOSE_RESOURCES\" \"$TARGET_BUILD_DIR/$CONTENTS_FOLDER_PATH/\"\nelse\n  # Fallback: find assembled resources\n  ASSEMBLED=\"$SRCROOT/../composeApp/build/generated/compose/resourceGenerator/assembledResources\"\n  if [ -d \"$ASSEMBLED\" ]; then\n    for arch_dir in \"$ASSEMBLED\"/ios*; do\n      if [ -d \"$arch_dir/composeResources\" ]; then\n        mkdir -p \"$TARGET_BUILD_DIR/$CONTENTS_FOLDER_PATH/composeResources\"\n        cp -R \"$arch_dir/composeResources/\"* \"$TARGET_BUILD_DIR/$CONTENTS_FOLDER_PATH/composeResources/\"\n        break\n      fi\n    done\n  fi\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA3B2C3D4E5F6A7B8C9D0E1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A1B2C3D4E5F6A7B8C9D0E1F /* CapyIDEApp.swift in Sources */,
+				7A3B2C3D4E5F6A7B8C9D0E1F /* StoreManager.swift in Sources */,
+				7A4B2C3D4E5F6A7B8C9D0E1F /* PaywallView.swift in Sources */,
+				7A5B2C3D4E5F6A7B8C9D0E1F /* BannerAdView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		AB1B2C3D4E5F6A7B8C9D0E1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AB2B2C3D4E5F6A7B8C9D0E1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AB3B2C3D4E5F6A7B8C9D0E1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8QP24RDLUR;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../composeApp/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = iosApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					composeApp,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.capyide.mobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AB4B2C3D4E5F6A7B8C9D0E1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 8QP24RDLUR;
+				ENABLE_PREVIEWS = YES;
+				FRAMEWORK_SEARCH_PATHS = "$(SRCROOT)/../composeApp/build/xcode-frameworks/$(CONFIGURATION)/$(SDK_NAME)";
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = iosApp/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					composeApp,
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = dev.capyide.mobile;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA1B2C3D4E5F6A7B8C9D0E2F /* Build configuration list for PBXProject "iosApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB1B2C3D4E5F6A7B8C9D0E1F /* Debug */,
+				AB2B2C3D4E5F6A7B8C9D0E1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA2B2C3D4E5F6A7B8C9D0E1F /* Build configuration list for PBXNativeTarget "iosApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AB3B2C3D4E5F6A7B8C9D0E1F /* Debug */,
+				AB4B2C3D4E5F6A7B8C9D0E1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8F3B85CA2F592D300094A332 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 13.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8F3B85CB2F592D300094A332 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8F3B85CA2F592D300094A332 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = FA1B2C3D4E5F6A7B8C9D0E1F /* Project object */;
+}

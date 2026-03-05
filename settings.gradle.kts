@@ -13,5 +13,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "CapyIDE Mobile"
-include(":app")
+rootProject.name = "CapyIDE-Mobile"
+include(":shared")
+include(":composeApp")
+include(":androidApp")
