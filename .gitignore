@@ -43,3 +43,4 @@ proguard/
 # Local JDK downloads
 jdk/
 jdk*.zip
+**/xcuserdata/**
